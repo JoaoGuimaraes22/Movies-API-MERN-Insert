@@ -1,10 +1,10 @@
 var CronJob = require("cron").CronJob;
-const movies = require("./helpers/movies").default;
+const mongo = require("./db/mongo");
 
 var job = new CronJob(
   "* * * * *",
   () => {
-    movies();
+    mongo();
   },
   null,
   true,
